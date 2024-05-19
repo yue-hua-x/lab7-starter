@@ -135,7 +135,7 @@ class RecipeCard extends HTMLElement {
 	  <p class="organization">The Chef's Organization</p>
 	  <div class="rating">
 		<span>5</span>
-		<img src="/assets/images/icons/5-star.svg" alt="5 stars">
+		<img src="./assets/images/icons/5-star.svg" alt="5 stars">
 		<span>(500)</span>
 	  </div>
 	  <time>50 min</time>
@@ -153,6 +153,8 @@ class RecipeCard extends HTMLElement {
 		let rt = article.querySelector('.rating');
 		rt.querySelector('span').innerHTML = data.rating;
 		rt.querySelectorAll('span')[1].innerHTML = '(' + data.numRatings + ')';
+		rt.querySelector('img').src = './assets/images/icons/' + data.rating + '-star.svg';
+		rt.querySelector('img').src = data.rating + " stars";
 		let time = article.querySelector('time');
 		time.innerHTML = data.lengthTime;
 		let ing = article.querySelector('.ingredients');
